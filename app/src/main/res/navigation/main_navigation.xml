@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_appointment_navigation"
+    app:startDestination="@id/bottomMenuFragment">
+
+    <fragment
+        android:id="@+id/bottomMenuFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.BottomMenuFragment"
+        android:label="fragment_bottom_menu"
+        tools:layout="@layout/fragment_bottom_menu" >
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_newAppointmentFragment"
+            app:destination="@id/newAppointmentFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_promotionFragment"
+            app:destination="@id/promotionFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_serviceFragment"
+            app:destination="@id/serviceFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_profileDataFragment"
+            app:destination="@id/profileDataFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_appointmentsFragment"
+            app:destination="@id/appointmentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newAppointmentFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.NewAppointmentFragment"
+        android:label="NewAppointmentFragment"
+        tools:layout="@layout/fragment_new_appointment"/>
+    <fragment
+        android:id="@+id/promotionFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.PromotionFragment"
+        android:label="PromotionFragment"
+        tools:layout="@layout/fragment_promotion"/>
+    <fragment
+        android:id="@+id/serviceFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.ServiceFragment"
+        android:label="ServiceFragment"
+        tools:layout="@layout/fragment_service"/>
+    <fragment
+        android:id="@+id/profileDataFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.ProfileDataFragment"
+        android:label="FormFragment"
+        tools:layout="@layout/fragment_profile_data"/>
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.AuthorizationFragment"
+        android:label="AuthorizationFragment"
+        tools:layout="@layout/fragment_authorization">
+        <action
+            android:id="@+id/action_authorizationFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_authorizationFragment_to_bottomMenuFragment"
+            app:destination="@id/bottomMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentsFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.AppointmentsFragment"
+        android:label="AppointmentsFragment"
+        tools:layout="@layout/fragment_appointments"/>
+</navigation>

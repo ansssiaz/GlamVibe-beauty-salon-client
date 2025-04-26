@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="authorization_textview">Введите логин и пароль</string>
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+    <string name="authorization_button">Войти</string>
+    <string name="avatar_content_description">Фото профиля</string>
+    <string name="exit">Выйти</string>
+    <string name="exit_content_description">Выйти</string>
+    <string name="arrow_forward_content_description">Стрелка вперед</string>
+    <string name="profile">Мои данные</string>
+    <string name="add_button_description">Записаться</string>
+    <string name="main_menu">Главная</string>
+    <string name="profile_menu">Профиль</string>
+    <string name="favourites_menu">Избранное</string>
+    <string name="catalog_menu">Каталог</string>
+    <string name="registration_button">Регистрация</string>
+    <string name="form_content_description">Анкета</string>
+    <string name="appointments">Записи</string>
+    <string name="network_error">Ошибка подключения к сети</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="snackbar_action_text">Повторить</string>
+    <string name="profile_data_textview">Мои данные</string>
+    <string name="hint_lastname">Фамилия <font color='#FF0000'>*</font></string>
+    <string name="hint_name">Имя <font color="#FF0000">*</font></string>
+    <string name="hint_patronymic">Отчество</string>
+    <string name="hint_birth_date">Дата рождения <font color="#FF0000">*</font></string>
+    <string name="hint_phone">Телефон <font color="#FF0000">*</font></string>
+    <string name="hint_login">Логин</string>
+    <string name="hint_password">Пароль</string>
+    <string name="edit_profile_data_button">Изменить</string>
+    <string name="save_changes_profile_data_button">Сохранить</string>
+    <string name="profile_personal_data_textview">Личная информация</string>
+    <string name="profile_contact_data_textview">Контакты</string>
+    <string name="profile_credentials_textview">Учетные данные</string>
+    <string name="change_profile_credentials_textview">Введите новый логин или пароль, если хотите их изменить.</string>
+    <string name="registration_textview">Регистрация</string>
+    <string name="registration_button_text">Зарегистрироваться</string>
+    <string name="hint_login_registration">Логин <font color="#FF0000">*</font></string>
+    <string name="hint_password_registration">Пароль <font color="#FF0000">*</font></string>
+    <string name="registration_form_textview">Анкета</string>
+    <string name="complete_registration_form_textview">По желанию Вы можете заполнить анкету, которая будет использоваться для подбора рекомендаций.</string>
+    <string name="form_skin_type_textview">1. Тип кожи</string>
+    <string name="form_hair_type_textview">2. Тип волос</string>
+    <string name="form_skin_type_oily">Жирная</string>
+    <string name="form_skin_type_dry">Сухая</string>
+    <string name="form_skin_type_normal">Нормальная</string>
+    <string name="form_skin_type_combination">Комбинированная</string>
+    <string name="form_hair_type_normal">Нормальные</string>
+    <string name="form_hair_type_dry">Сухие</string>
+    <string name="form_hair_type_oily">Склонные к жирности</string>
+    <string name="form_hair_type_colored">Окрашенные</string>
+    <string name="form_hair_type_damaged">Поврежденные</string>
+    <string name="form_upcoming_events_textview">3. Предстоящие события</string>
+    <string name="form_upcoming_events_wedding">Свадьба</string>
+    <string name="form_upcoming_events_holiday">Праздник</string>
+    <string name="form_upcoming_events_photoshoot">Фотосессия</string>
+    <string name="app_logo_content_description">Логотип приложения</string>
+</resources>
