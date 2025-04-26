@@ -64,4 +64,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.arrow.core)
     implementation(libs.glide)
+    implementation (libs.koin.android)
+    implementation(libs.koin.core)
+    implementation(libs.kotlinx.datetime)
 }
