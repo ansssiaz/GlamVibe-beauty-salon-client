@@ -57,4 +57,14 @@
     <string name="form_upcoming_events_holiday">Holiday</string>
     <string name="form_upcoming_events_photoshoot">Photoshoot</string>
     <string name="app_logo_content_description">App logo</string>
+    <string name="title_services_list">Services</string>
+    <string name="title_masters_list">Masters</string>
+    <string name="service_image_content_description">Service image</string>
+    <string name="master_photo_content_description">Photo of the master</string>
+    <string name="ruble_content_description">Rubles</string>
+    <string name="time_content_description">Minutes</string>
+    <string name="service_favourite_content_description">Is favourite</string>
+    <string name="promotion_circle_content_description">Promotion icon</string>
+    <string name="title_catalog">Catalog</string>
+    <string name="catalog_services_title">Choose category</string>
 </resources>

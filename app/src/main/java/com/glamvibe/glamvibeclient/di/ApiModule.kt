@@ -3,6 +3,7 @@ package com.glamvibe.glamvibeclient.di
 import com.glamvibe.glamvibeclient.BuildConfig
 import com.glamvibe.glamvibeclient.data.api.AuthInterceptor
 import com.glamvibe.glamvibeclient.data.api.ClientApi
+import com.glamvibe.glamvibeclient.data.api.ServicesApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -16,6 +17,7 @@ val apiModule = module {
     single { provideOkHttpClient(get()) }
     single { provideRetrofit(get()) }
     single { provideClientApi(get()) }
+    single { provideServicesApi(get()) }
 }
 
 private val contentType = "application/json".toMediaType()
@@ -34,8 +36,10 @@ private fun provideRetrofit(
 ): Retrofit =
     Retrofit.Builder()
         .client(okHttpClient)
-        .baseUrl("http://192.168.1.4:8080/")
+        .baseUrl("http://192.168.0.13:8080/")
         .addConverterFactory(json.asConverterFactory(contentType))
         .build()
 
 private fun provideClientApi(retrofit: Retrofit): ClientApi = retrofit.create(ClientApi::class.java)
+
+private fun provideServicesApi(retrofit: Retrofit): ServicesApi = retrofit.create(ServicesApi::class.java)

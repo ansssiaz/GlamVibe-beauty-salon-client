@@ -17,9 +17,6 @@
             android:id="@+id/action_bottomMenuFragment_to_promotionFragment"
             app:destination="@id/promotionFragment" />
         <action
-            android:id="@+id/action_bottomMenuFragment_to_serviceFragment"
-            app:destination="@id/serviceFragment" />
-        <action
             android:id="@+id/action_bottomMenuFragment_to_profileDataFragment"
             app:destination="@id/profileDataFragment" />
         <action
@@ -28,6 +25,12 @@
         <action
             android:id="@+id/action_bottomMenuFragment_to_appointmentsFragment"
             app:destination="@id/appointmentsFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_servicesCatalogFragment"
+            app:destination="@id/servicesCatalogFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_mastersCatalogFragment"
+            app:destination="@id/mastersCatalogFragment" />
     </fragment>
     <fragment
         android:id="@+id/newAppointmentFragment"
@@ -40,10 +43,10 @@
         android:label="PromotionFragment"
         tools:layout="@layout/fragment_promotion"/>
     <fragment
-        android:id="@+id/serviceFragment"
-        android:name="com.glamvibe.glamvibeclient.presentation.fragments.ServiceFragment"
-        android:label="ServiceFragment"
-        tools:layout="@layout/fragment_service"/>
+        android:id="@+id/serviceInformationFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.ServiceInformationFragment"
+        android:label="ServiceInformationFragment"
+        tools:layout="@layout/fragment_service_information"/>
     <fragment
         android:id="@+id/profileDataFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.ProfileDataFragment"
@@ -72,4 +75,18 @@
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.AppointmentsFragment"
         android:label="AppointmentsFragment"
         tools:layout="@layout/fragment_appointments"/>
+    <fragment
+        android:id="@+id/servicesCatalogFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.ServicesCatalogFragment"
+        android:label="ServicesCatalogFragment"
+        tools:layout="@layout/fragment_catalog_services">
+        <action
+            android:id="@+id/action_servicesCatalogFragment_to_serviceInformationFragment"
+            app:destination="@id/serviceInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mastersCatalogFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.MastersCatalogFragment"
+        android:label="MastersCatalogFragment"
+        tools:layout="@layout/fragment_catalog_masters"/>
 </navigation>
