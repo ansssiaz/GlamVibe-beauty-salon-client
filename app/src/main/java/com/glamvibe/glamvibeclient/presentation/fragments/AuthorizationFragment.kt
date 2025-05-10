@@ -25,6 +25,7 @@ class AuthorizationFragment : Fragment() {
     private lateinit var binding: FragmentAuthorizationBinding
     private var loginText: String = ""
     private var passwordText: String = ""
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

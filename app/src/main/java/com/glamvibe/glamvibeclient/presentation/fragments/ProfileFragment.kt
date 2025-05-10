@@ -18,6 +18,7 @@ import org.koin.androidx.viewmodel.ext.android.activityViewModel
 class ProfileFragment : Fragment() {
     private val clientViewModel: ClientViewModel by activityViewModel<ClientViewModel>()
     private lateinit var binding: FragmentProfileBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

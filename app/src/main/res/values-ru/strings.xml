@@ -56,4 +56,14 @@
     <string name="form_upcoming_events_holiday">Праздник</string>
     <string name="form_upcoming_events_photoshoot">Фотосессия</string>
     <string name="app_logo_content_description">Логотип приложения</string>
+    <string name="title_services_list">Услуги</string>
+    <string name="title_masters_list">Мастера</string>
+    <string name="service_image_content_description">Изображение услуги</string>
+    <string name="master_photo_content_description">Фото мастера</string>
+    <string name="ruble_content_description">рублей</string>
+    <string name="time_content_description">минут</string>
+    <string name="service_favourite_content_description">В избранном</string>
+    <string name="promotion_circle_content_description">Иконка акции</string>
+    <string name="title_catalog">Каталог</string>
+    <string name="catalog_services_title">Выберите категорию</string>
 </resources>
