@@ -1,7 +1,7 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.GlamVibeClient" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimaryDark">@color/ivory</item>
+        <item name="colorPrimaryDark">@color/mauve</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="colorPrimary">@color/brown</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -11,5 +11,15 @@
 
     <style name="BottomNavigationView">
         <item name="fontFamily">@font/raleway</item>
+    </style>
+
+    <style name="ItemActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/rose</item>
+    </style>
+
+    <style name="ToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">@color/ivory</item>
     </style>
 </resources>

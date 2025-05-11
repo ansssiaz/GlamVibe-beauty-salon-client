@@ -33,21 +33,6 @@
         app:layout_constraintTop_toTopOf="@id/avatar_circle_background"
         app:srcCompat="@drawable/glam_vibe_logo" />
 
-    <TextView
-        android:id="@+id/catalogTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/raleway"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp"
-        android:text="@string/title_catalog"
-        android:textAlignment="center"
-        android:textColor="@color/brown"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/app_logo" />
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/masters_item"
         android:layout_width="match_parent"
@@ -59,7 +44,7 @@
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/catalogTitle"
+        app:layout_constraintTop_toBottomOf="@id/app_logo"
         app:strokeColor="@color/brown">
 
 

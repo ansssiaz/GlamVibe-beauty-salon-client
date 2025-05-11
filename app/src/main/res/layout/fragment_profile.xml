@@ -66,7 +66,7 @@
         tools:text="Белова Анна Николаевна" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/masters_item"
+        android:id="@+id/appointments_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/masters_icon"
+                android:id="@+id/appointments_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="16dp"
@@ -97,7 +97,7 @@
                 app:srcCompat="@drawable/baseline_notes_24" />
 
             <TextView
-                android:id="@+id/masters_text"
+                android:id="@+id/appointments_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -106,7 +106,7 @@
                 android:textColor="@color/brown"
                 android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/masters_icon"
+                app:layout_constraintStart_toEndOf="@id/appointments_icon"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
@@ -133,7 +133,7 @@
         app:strokeColor="@color/brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/masters_item">
+        app:layout_constraintTop_toBottomOf="@id/appointments_item">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

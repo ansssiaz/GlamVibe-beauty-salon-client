@@ -8,12 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentRegistrationBinding
 import com.glamvibe.glamvibeclient.presentation.viewmodel.newClient.NewClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import com.glamvibe.glamvibeclient.utils.getErrorText
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.android.material.snackbar.Snackbar
@@ -24,6 +26,7 @@ import java.util.Locale
 
 class RegistrationFragment : Fragment() {
     private val newClientViewModel: NewClientViewModel by viewModel<NewClientViewModel>()
+    private val toolbarViewModel: ToolbarViewModel by activityViewModels<ToolbarViewModel>()
     private lateinit var binding: FragmentRegistrationBinding
 
     private var lastname: String = ""
@@ -44,6 +47,8 @@ class RegistrationFragment : Fragment() {
         var snackbar: Snackbar? = null
 
         binding = FragmentRegistrationBinding.inflate(inflater)
+
+        toolbarViewModel.setTitle(getString(R.string.registration_title))
 
         binding.registrationButton.alpha = 0.5f
         binding.registrationButton.isEnabled = false

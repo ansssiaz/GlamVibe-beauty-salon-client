@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,7 @@ import com.glamvibe.glamvibeclient.domain.model.Service
 import com.glamvibe.glamvibeclient.presentation.adapter.services.ServicesAdapter
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.services.ServicesViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
@@ -25,6 +27,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ServicesCatalogFragment : Fragment() {
     private lateinit var binding: FragmentCatalogServicesBinding
+    private val toolbarViewModel: ToolbarViewModel by activityViewModels<ToolbarViewModel>()
     private val servicesViewModel: ServicesViewModel by viewModel<ServicesViewModel>()
     private val clientViewModel: ClientViewModel by activityViewModel<ClientViewModel>()
     private lateinit var categoriesAdapter: ArrayAdapter<String>
@@ -36,6 +39,8 @@ class ServicesCatalogFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentCatalogServicesBinding.inflate(inflater)
+
+        toolbarViewModel.setTitle(getString(R.string.catalog_services_title))
 
         categoriesAdapter = ArrayAdapter(
             requireContext(),

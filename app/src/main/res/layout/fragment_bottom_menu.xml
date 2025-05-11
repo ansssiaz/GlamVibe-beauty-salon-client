@@ -26,10 +26,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:itemActiveIndicatorStyle="@style/ItemActiveIndicator"
         app:layout_constraintStart_toStartOf="parent"
-        app:itemActiveIndicatorStyle="@color/mauve"
-        app:itemIconTint="@color/brown"
-        app:itemTextColor="@color/brown"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemTextColor="@color/bottom_nav_item_color"
         app:menu="@menu/bottom_menu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

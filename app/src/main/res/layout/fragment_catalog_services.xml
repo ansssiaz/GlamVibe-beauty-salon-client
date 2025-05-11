@@ -30,7 +30,7 @@
                 android:paddingStart="16dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="16dp"
-                android:text="@string/catalog_services_title"
+                android:text="@string/catalog_services_textview"
                 android:textColor="@color/brown"
                 android:textSize="20sp" />
 
