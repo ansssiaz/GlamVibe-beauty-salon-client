@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -18,6 +19,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentServiceInformationBinding
+import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 
 class ServiceInformationFragment : Fragment() {
     companion object {
@@ -33,6 +35,7 @@ class ServiceInformationFragment : Fragment() {
     }
 
     private lateinit var binding: FragmentServiceInformationBinding
+    private val toolbarViewModel: ToolbarViewModel by activityViewModels<ToolbarViewModel>()
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -42,11 +45,13 @@ class ServiceInformationFragment : Fragment() {
     ): View {
         binding = FragmentServiceInformationBinding.inflate(inflater)
 
+        toolbarViewModel.setTitle(getString(R.string.service_information_title))
+
         val priceWithPromotion = arguments?.getInt(ARG_PRICE_WITH_PROMOTION)
         val discountPercentage = arguments?.getInt(ARG_DISCOUNT_PERCENTAGE)
         val price = arguments?.getInt(ARG_PRICE)
 
-        if (priceWithPromotion != 0  && discountPercentage != 0) {
+        if (priceWithPromotion != 0 && discountPercentage != 0) {
             binding.price.text = priceWithPromotion.toString()
             binding.price.setTextColor(getColor(requireContext(), R.color.mauve))
 

@@ -8,17 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentProfileDataBinding
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class ProfileDataFragment : Fragment() {
     private val clientViewModel: ClientViewModel by activityViewModel<ClientViewModel>()
+    private val toolbarViewModel: ToolbarViewModel by activityViewModels<ToolbarViewModel>()
     private lateinit var binding: FragmentProfileDataBinding
 
     private var lastname: String = ""
@@ -36,6 +40,8 @@ class ProfileDataFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileDataBinding.inflate(inflater)
+
+        toolbarViewModel.setTitle(getString(R.string.profile_data_title))
 
         binding.saveChangesProfileDataButton.alpha = 0.5f
         binding.saveChangesProfileDataButton.isEnabled = false

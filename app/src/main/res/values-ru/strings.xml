@@ -20,7 +20,6 @@
     <string name="network_error">Ошибка подключения к сети</string>
     <string name="unknown_error">Неизвестная ошибка</string>
     <string name="snackbar_action_text">Повторить</string>
-    <string name="profile_data_textview">Мои данные</string>
     <string name="hint_lastname">Фамилия <font color='#FF0000'>*</font></string>
     <string name="hint_name">Имя <font color="#FF0000">*</font></string>
     <string name="hint_patronymic">Отчество</string>
@@ -34,7 +33,7 @@
     <string name="profile_contact_data_textview">Контакты</string>
     <string name="profile_credentials_textview">Учетные данные</string>
     <string name="change_profile_credentials_textview">Введите новый логин или пароль, если хотите их изменить.</string>
-    <string name="registration_textview">Регистрация</string>
+    <string name="registration_title">Регистрация</string>
     <string name="registration_button_text">Зарегистрироваться</string>
     <string name="hint_login_registration">Логин <font color="#FF0000">*</font></string>
     <string name="hint_password_registration">Пароль <font color="#FF0000">*</font></string>
@@ -65,5 +64,16 @@
     <string name="service_favourite_content_description">В избранном</string>
     <string name="promotion_circle_content_description">Иконка акции</string>
     <string name="title_catalog">Каталог</string>
-    <string name="catalog_services_title">Выберите категорию</string>
+    <string name="catalog_services_textview">Выберите категорию</string>
+    <string name="main_page_title">Главная</string>
+    <string name="catalog_title">Каталог</string>
+    <string name="service_information_title">Информация об услуге</string>
+    <string name="catalog_services_title">Каталог услуг</string>
+    <string name="catalog_masters_title">Каталог мастеров</string>
+    <string name="profile_title">Мой профиль</string>
+    <string name="profile_data_title">Мои данные</string>
+    <string name="favourites_title">Избранное</string>
+    <string name="appointments_title">Мои записи</string>
+    <string name="promotion_information_title">Информация об акции</string>
+    <string name="new_appointment_title">Новая запись</string>
 </resources>

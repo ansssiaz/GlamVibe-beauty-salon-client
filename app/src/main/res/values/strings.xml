@@ -20,7 +20,6 @@
     <string name="network_error">Network error</string>
     <string name="unknown_error">Unknown error</string>
     <string name="snackbar_action_text">Repeat</string>
-    <string name="profile_data_textview">My data</string>
     <string name="hint_lastname">Lastname</string>
     <string name="hint_name">Name</string>
     <string name="hint_patronymic">Patronymic</string>
@@ -35,7 +34,7 @@
     <string name="profile_contact_data_textview">Contact data</string>
     <string name="profile_credentials_textview">Credentials</string>
     <string name="change_profile_credentials_textview">Enter a new login or password if you want to change them.</string>
-    <string name="registration_textview">Registration</string>
+    <string name="registration_title">Registration</string>
     <string name="registration_button_text">Registrate</string>
     <string name="hint_login_registration">Login</string>
     <string name="hint_password_registration">Password</string>
@@ -66,5 +65,16 @@
     <string name="service_favourite_content_description">Is favourite</string>
     <string name="promotion_circle_content_description">Promotion icon</string>
     <string name="title_catalog">Catalog</string>
-    <string name="catalog_services_title">Choose category</string>
+    <string name="catalog_services_textview">Choose category</string>
+    <string name="main_page_title">Main</string>
+    <string name="catalog_title">Catalog</string>
+    <string name="service_information_title">Information about service</string>
+    <string name="catalog_services_title">Catalog of services</string>
+    <string name="catalog_masters_title">Catalog of masters</string>
+    <string name="profile_title">My profile</string>
+    <string name="profile_data_title">Profile data</string>
+    <string name="favourites_title">Favourites</string>
+    <string name="appointments_title">My appointments</string>
+    <string name="promotion_information_title">Information about promotion</string>
+    <string name="new_appointment_title">New appointment</string>
 </resources>

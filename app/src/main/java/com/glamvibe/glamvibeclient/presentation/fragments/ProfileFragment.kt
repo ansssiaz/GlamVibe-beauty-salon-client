@@ -5,18 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentProfileBinding
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class ProfileFragment : Fragment() {
     private val clientViewModel: ClientViewModel by activityViewModel<ClientViewModel>()
+    private val toolbarViewModel: ToolbarViewModel by activityViewModels<ToolbarViewModel>()
     private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
@@ -25,6 +28,8 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater)
+
+        toolbarViewModel.setTitle(getString(R.string.profile_title))
 
         clientViewModel.getProfileInformation()
 
@@ -48,7 +53,7 @@ class ProfileFragment : Fragment() {
             }
             .launchIn(viewLifecycleOwner.lifecycleScope)
 
-        binding.profileDataItem.setOnClickListener {
+        binding.appointmentsItem.setOnClickListener {
             requireParentFragment().requireParentFragment().findNavController()
                 .navigate(
                     R.id.action_bottomMenuFragment_to_appointmentsFragment

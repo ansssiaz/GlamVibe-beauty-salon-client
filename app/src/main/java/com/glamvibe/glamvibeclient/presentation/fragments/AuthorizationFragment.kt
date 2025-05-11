@@ -8,12 +8,14 @@ import androidx.core.content.ContextCompat.getColor
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentAuthorizationBinding
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import com.glamvibe.glamvibeclient.utils.getErrorText
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.launchIn
@@ -22,6 +24,7 @@ import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class AuthorizationFragment : Fragment() {
     private val clientViewModel: ClientViewModel by activityViewModel<ClientViewModel>()
+    private val toolbarViewModel: ToolbarViewModel by activityViewModels<ToolbarViewModel>()
     private lateinit var binding: FragmentAuthorizationBinding
     private var loginText: String = ""
     private var passwordText: String = ""
@@ -34,6 +37,8 @@ class AuthorizationFragment : Fragment() {
         var snackbar: Snackbar? = null
 
         binding = FragmentAuthorizationBinding.inflate(inflater)
+
+        toolbarViewModel.setTitle(getString(R.string.app_name))
 
         binding.signInButton.alpha = 0.5f
         binding.signInButton.isEnabled = false
@@ -97,6 +102,7 @@ class AuthorizationFragment : Fragment() {
             binding.signInButton.isEnabled = isEnabled
             binding.signInButton.alpha = if (isEnabled) 1f else 0.5f
         }
+
         override fun afterTextChanged(s: Editable?) {}
     }
 }
