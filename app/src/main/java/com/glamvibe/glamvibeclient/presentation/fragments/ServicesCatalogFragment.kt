@@ -82,11 +82,22 @@ class ServicesCatalogFragment : Fragment() {
         val servicesAdapter = ServicesAdapter(
             object : ServicesAdapter.ServicesListener {
                 override fun onFavouriteClicked(service: Service) {
-                    //servicesViewModel.addToFavourites()
+                    clientViewModel.state.value.client?.let {
+                        servicesViewModel.changeFavourites(
+                            it.id,
+                            service
+                        )
+                    }
                 }
 
                 override fun onServiceImageClicked(service: Service) {
-                    navigateToServiceFragment(service)
+                    findNavController().navigate(
+                        R.id.action_servicesCatalogFragment_to_serviceInformationFragment,
+                        bundleOf(
+                            ServiceInformationFragment.ARG_ID to service.id,
+
+                            )
+                    )
                 }
             }
         )
@@ -118,23 +129,5 @@ class ServicesCatalogFragment : Fragment() {
             .launchIn(viewLifecycleOwner.lifecycleScope)
 
         return binding.root
-    }
-
-    private fun navigateToServiceFragment(service: Service) {
-        findNavController().navigate(
-            R.id.action_servicesCatalogFragment_to_serviceInformationFragment,
-            bundleOf(
-                ServiceInformationFragment.ARG_NAME to service.name,
-                ServiceInformationFragment.ARG_CATEGORY to service.category,
-                ServiceInformationFragment.ARG_DESCRIPTION to service.description,
-                ServiceInformationFragment.ARG_IMAGE_URL to service.imageUrl,
-                ServiceInformationFragment.ARG_DURATION to service.duration,
-                ServiceInformationFragment.ARG_PRICE to service.price,
-                ServiceInformationFragment.ARG_PRICE_WITH_PROMOTION to service.priceWithPromotion,
-                ServiceInformationFragment.ARG_DISCOUNT_PERCENTAGE to service.discountPercentage,
-                ServiceInformationFragment.ARG_IS_FAVOURITE to service.isFavourite
-
-            )
-        )
     }
 }
