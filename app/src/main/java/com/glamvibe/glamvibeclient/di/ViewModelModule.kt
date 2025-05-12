@@ -1,6 +1,7 @@
 package com.glamvibe.glamvibeclient.di
 
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.newClient.NewClientViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.service.ServiceViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.services.ServicesViewModel
@@ -22,5 +23,9 @@ val viewModelModule = module {
 
     viewModel { (serviceId: Int, clientId: Int) ->
         ServiceViewModel(get(), get(), serviceId, clientId)
+    }
+
+    viewModel { (clientId: Int) ->
+        FavouritesViewModel(get(), clientId)
     }
 }

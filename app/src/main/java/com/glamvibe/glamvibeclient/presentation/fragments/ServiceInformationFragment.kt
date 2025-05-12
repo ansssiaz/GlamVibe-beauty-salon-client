@@ -22,6 +22,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentServiceInformationBinding
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.service.ServiceViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -54,6 +55,8 @@ class ServiceInformationFragment : Fragment() {
         val clientId = clientViewModel.state.value.client?.id
 
         val serviceViewModel by viewModel<ServiceViewModel> { parametersOf(serviceId, clientId) }
+
+        val favouritesViewModel by activityViewModel<FavouritesViewModel> { parametersOf(clientId) }
 
         binding.favourite.setOnClickListener {
             clientViewModel.state.value.client?.let {
@@ -130,6 +133,8 @@ class ServiceInformationFragment : Fragment() {
                             R.drawable.baseline_favorite_border_24
                         }
                     )
+
+                    favouritesViewModel.getFavourites()
                 }
             }
             .launchIn(viewLifecycleOwner.lifecycleScope)

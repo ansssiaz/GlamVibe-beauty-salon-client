@@ -19,21 +19,23 @@
 
         <ImageView
             android:id="@+id/service_image"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="20dp"
             android:contentDescription="@string/service_image_content_description"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:srcCompat="@drawable/empty_image"
             tools:ignore="ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/promotion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="-38dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="-30dp"
             android:layout_marginTop="-15dp"
             android:contentDescription="@string/promotion_circle_content_description"
             app:layout_constraintStart_toStartOf="@id/service_image"
@@ -47,7 +49,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato"
             android:textColor="@color/ivory"
-            android:textSize="22sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/promotion"
             app:layout_constraintEnd_toEndOf="@id/promotion"
             app:layout_constraintStart_toStartOf="@id/promotion"
@@ -55,29 +57,20 @@
             tools:ignore="TextContrastCheck"
             tools:text="-15%" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/favourite"
-            style="@style/Widget.Material3.Button.IconButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/service_favourite_content_description"
-            app:icon="@drawable/baseline_favorite_border_24"
-            app:iconTint="@color/mauve"
-            app:iconSize="@dimen/icon_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/service_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/raleway"
             android:textColor="@color/brown"
-            android:textSize="18sp"
-            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toEndOf="@id/service_image"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/service_image"
+            app:layout_constraintTop_toTopOf="@id/service_image"
             tools:text="Наращивание ресниц" />
 
         <TextView
@@ -88,8 +81,7 @@
             android:textColor="@color/brown"
             android:textSize="16sp"
             android:layout_marginTop="5dp"
-            app:layout_constraintEnd_toEndOf="@id/service_image"
-            app:layout_constraintStart_toStartOf="@id/service_image"
+            app:layout_constraintStart_toStartOf="@id/service_name"
             app:layout_constraintTop_toBottomOf="@id/service_name"
             tools:text="2000" />
 
@@ -134,9 +126,7 @@
             android:fontFamily="@font/lato"
             android:textColor="@color/brown"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/service_name"
             app:layout_constraintTop_toBottomOf="@id/price"
             tools:text="45" />
 
@@ -150,6 +140,36 @@
             app:layout_constraintStart_toEndOf="@id/duration"
             app:layout_constraintTop_toTopOf="@+id/duration"
             app:srcCompat="@drawable/baseline_access_time_24" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/make_appointment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/mauve"
+            android:fontFamily="@font/raleway"
+            android:text="@string/favourites_make_appointment_button"
+            android:textColor="@color/ivory"
+            android:textSize="15sp"
+            app:cornerRadius="4dp"
+            app:layout_constraintStart_toEndOf="@id/service_image"
+            app:layout_constraintBottom_toBottomOf="@id/service_image"
+            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteService"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/service_favourite_content_description"
+            app:icon="@drawable/baseline_delete_outline_24"
+            app:iconSize="@dimen/icon_size"
+            app:layout_constraintStart_toEndOf="@id/make_appointment_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/make_appointment_button"
+            app:layout_constraintBottom_toBottomOf="@id/make_appointment_button"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

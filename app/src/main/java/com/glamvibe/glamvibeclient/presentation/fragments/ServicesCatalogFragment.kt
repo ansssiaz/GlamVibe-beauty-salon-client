@@ -18,12 +18,14 @@ import com.glamvibe.glamvibeclient.databinding.FragmentCatalogServicesBinding
 import com.glamvibe.glamvibeclient.domain.model.Service
 import com.glamvibe.glamvibeclient.presentation.adapter.services.ServicesAdapter
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.services.ServicesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class ServicesCatalogFragment : Fragment() {
     private lateinit var binding: FragmentCatalogServicesBinding
@@ -41,6 +43,10 @@ class ServicesCatalogFragment : Fragment() {
         binding = FragmentCatalogServicesBinding.inflate(inflater)
 
         toolbarViewModel.setTitle(getString(R.string.catalog_services_title))
+
+        val clientId = clientViewModel.state.value.client?.id
+
+        val favouritesViewModel by activityViewModel<FavouritesViewModel> { parametersOf(clientId) }
 
         categoriesAdapter = ArrayAdapter(
             requireContext(),
@@ -67,8 +73,6 @@ class ServicesCatalogFragment : Fragment() {
                 servicesViewModel.filterServicesByCategory(null)
             }
         }
-
-        clientViewModel.getProfileInformation()
 
         clientViewModel.state
             .flowWithLifecycle(viewLifecycleOwner.lifecycle)
@@ -125,6 +129,8 @@ class ServicesCatalogFragment : Fragment() {
                 if (position >= 0) {
                     binding.spinner.setSelection(position)
                 }
+
+                favouritesViewModel.getFavourites()
             }
             .launchIn(viewLifecycleOwner.lifecycleScope)
 

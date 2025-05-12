@@ -76,4 +76,5 @@
     <string name="appointments_title">Мои записи</string>
     <string name="promotion_information_title">Информация об акции</string>
     <string name="new_appointment_title">Новая запись</string>
+    <string name="favourites_make_appointment_button">Записаться</string>
 </resources>

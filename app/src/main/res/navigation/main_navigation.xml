@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_bottomMenuFragment_to_mastersCatalogFragment"
             app:destination="@id/mastersCatalogFragment" />
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_serviceInformationFragment"
+            app:destination="@id/serviceInformationFragment" />
     </fragment>
     <fragment
         android:id="@+id/newAppointmentFragment"
