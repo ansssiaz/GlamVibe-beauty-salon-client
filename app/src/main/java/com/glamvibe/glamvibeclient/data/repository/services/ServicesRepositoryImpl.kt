@@ -6,4 +6,6 @@ import com.glamvibe.glamvibeclient.domain.repository.services.ServicesRepository
 
 class ServicesRepositoryImpl(private val api: ServicesApi) : ServicesRepository {
     override suspend fun getServices(clientId: Int): List<Service> = api.getServices(clientId)
+    override suspend fun getService(serviceId: Int, clientId: Int): Service =
+        api.getService(serviceId, clientId)
 }

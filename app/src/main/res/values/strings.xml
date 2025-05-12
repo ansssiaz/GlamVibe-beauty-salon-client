@@ -77,4 +77,5 @@
     <string name="appointments_title">My appointments</string>
     <string name="promotion_information_title">Information about promotion</string>
     <string name="new_appointment_title">New appointment</string>
+    <string name="favourites_make_appointment_button">Appointment</string>
 </resources>

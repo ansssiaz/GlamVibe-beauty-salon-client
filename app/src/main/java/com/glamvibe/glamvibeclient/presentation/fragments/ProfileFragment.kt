@@ -31,8 +31,6 @@ class ProfileFragment : Fragment() {
 
         toolbarViewModel.setTitle(getString(R.string.profile_title))
 
-        clientViewModel.getProfileInformation()
-
         clientViewModel.state
             .flowWithLifecycle(viewLifecycleOwner.lifecycle)
             .onEach {

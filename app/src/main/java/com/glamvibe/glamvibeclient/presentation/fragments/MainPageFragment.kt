@@ -32,6 +32,8 @@ class MainPageFragment : Fragment() {
 
         clientViewModel.checkTokenPair()
 
+        clientViewModel.getProfileInformation()
+
         clientViewModel.state
             .flowWithLifecycle(viewLifecycleOwner.lifecycle)
             .onEach {

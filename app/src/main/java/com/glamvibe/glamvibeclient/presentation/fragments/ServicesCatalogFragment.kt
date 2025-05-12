@@ -18,12 +18,14 @@ import com.glamvibe.glamvibeclient.databinding.FragmentCatalogServicesBinding
 import com.glamvibe.glamvibeclient.domain.model.Service
 import com.glamvibe.glamvibeclient.presentation.adapter.services.ServicesAdapter
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.services.ServicesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class ServicesCatalogFragment : Fragment() {
     private lateinit var binding: FragmentCatalogServicesBinding
@@ -41,6 +43,10 @@ class ServicesCatalogFragment : Fragment() {
         binding = FragmentCatalogServicesBinding.inflate(inflater)
 
         toolbarViewModel.setTitle(getString(R.string.catalog_services_title))
+
+        val clientId = clientViewModel.state.value.client?.id
+
+        val favouritesViewModel by activityViewModel<FavouritesViewModel> { parametersOf(clientId) }
 
         categoriesAdapter = ArrayAdapter(
             requireContext(),
@@ -68,8 +74,6 @@ class ServicesCatalogFragment : Fragment() {
             }
         }
 
-        clientViewModel.getProfileInformation()
-
         clientViewModel.state
             .flowWithLifecycle(viewLifecycleOwner.lifecycle)
             .onEach {
@@ -82,11 +86,22 @@ class ServicesCatalogFragment : Fragment() {
         val servicesAdapter = ServicesAdapter(
             object : ServicesAdapter.ServicesListener {
                 override fun onFavouriteClicked(service: Service) {
-                    //servicesViewModel.addToFavourites()
+                    clientViewModel.state.value.client?.let {
+                        servicesViewModel.changeFavourites(
+                            it.id,
+                            service
+                        )
+                    }
                 }
 
                 override fun onServiceImageClicked(service: Service) {
-                    navigateToServiceFragment(service)
+                    findNavController().navigate(
+                        R.id.action_servicesCatalogFragment_to_serviceInformationFragment,
+                        bundleOf(
+                            ServiceInformationFragment.ARG_ID to service.id,
+
+                            )
+                    )
                 }
             }
         )
@@ -114,27 +129,11 @@ class ServicesCatalogFragment : Fragment() {
                 if (position >= 0) {
                     binding.spinner.setSelection(position)
                 }
+
+                favouritesViewModel.getFavourites()
             }
             .launchIn(viewLifecycleOwner.lifecycleScope)
 
         return binding.root
-    }
-
-    private fun navigateToServiceFragment(service: Service) {
-        findNavController().navigate(
-            R.id.action_servicesCatalogFragment_to_serviceInformationFragment,
-            bundleOf(
-                ServiceInformationFragment.ARG_NAME to service.name,
-                ServiceInformationFragment.ARG_CATEGORY to service.category,
-                ServiceInformationFragment.ARG_DESCRIPTION to service.description,
-                ServiceInformationFragment.ARG_IMAGE_URL to service.imageUrl,
-                ServiceInformationFragment.ARG_DURATION to service.duration,
-                ServiceInformationFragment.ARG_PRICE to service.price,
-                ServiceInformationFragment.ARG_PRICE_WITH_PROMOTION to service.priceWithPromotion,
-                ServiceInformationFragment.ARG_DISCOUNT_PERCENTAGE to service.discountPercentage,
-                ServiceInformationFragment.ARG_IS_FAVOURITE to service.isFavourite
-
-            )
-        )
     }
 }

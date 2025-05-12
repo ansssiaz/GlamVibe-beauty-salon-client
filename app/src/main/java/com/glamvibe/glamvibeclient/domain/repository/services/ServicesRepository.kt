@@ -4,5 +4,5 @@ import com.glamvibe.glamvibeclient.domain.model.Service
 
 interface ServicesRepository {
     suspend fun getServices(clientId: Int): List<Service>
-    //suspend fun addToFavourites(clientId: Int, serviceId: Int)
+    suspend fun getService(serviceId: Int, clientId: Int): Service
 }
