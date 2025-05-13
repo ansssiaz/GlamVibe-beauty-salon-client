@@ -77,4 +77,6 @@
     <string name="promotion_information_title">Информация об акции</string>
     <string name="new_appointment_title">Новая запись</string>
     <string name="favourites_make_appointment_button">Записаться</string>
+    <string name="master_information_title">Информация о мастере</string>
+    <string name="master_image_content_description">Фото мастера</string>
 </resources>

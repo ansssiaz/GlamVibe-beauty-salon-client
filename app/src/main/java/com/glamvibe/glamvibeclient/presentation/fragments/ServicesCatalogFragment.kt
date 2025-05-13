@@ -122,8 +122,8 @@ class ServicesCatalogFragment : Fragment() {
                 categoriesAdapter.addAll(newCategories)
                 categoriesAdapter.notifyDataSetChanged()
 
-                val position = state.lastSelectedCategory?.let { cat ->
-                    newCategories.indexOf(cat)
+                val position = state.lastSelectedCategory?.let { category ->
+                    newCategories.indexOf(category)
                 } ?: 0
 
                 if (position >= 0) {

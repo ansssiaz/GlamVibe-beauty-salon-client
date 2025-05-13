@@ -9,12 +9,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.CardFavouritesServiceBinding
 import com.glamvibe.glamvibeclient.domain.model.Service
+import com.glamvibe.glamvibeclient.utils.dpToPx
 
 class FavouritesViewHolder(private val binding: CardFavouritesServiceBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -43,6 +43,10 @@ class FavouritesViewHolder(private val binding: CardFavouritesServiceBinding) :
 
         binding.duration.text = service.duration.toString()
 
+        val widthPx = dpToPx(150, binding.root.context)
+        val heightPx = dpToPx(150, binding.root.context)
+
+
         if (service.imageUrl.isEmpty()) {
             Glide.with(binding.root)
                 .load(R.drawable.empty_image)
@@ -53,9 +57,8 @@ class FavouritesViewHolder(private val binding: CardFavouritesServiceBinding) :
                 .load(service.imageUrl)
                 .apply(
                     RequestOptions()
-                        .override(250, 250)
+                        .override(widthPx, heightPx)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .downsample(DownsampleStrategy.AT_LEAST)
                         .encodeQuality(90)
                 )
                 .error(R.drawable.empty_image)

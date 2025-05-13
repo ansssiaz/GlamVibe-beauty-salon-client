@@ -91,5 +91,9 @@
         android:id="@+id/mastersCatalogFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.MastersCatalogFragment"
         android:label="MastersCatalogFragment"
-        tools:layout="@layout/fragment_catalog_masters"/>
+        tools:layout="@layout/fragment_catalog_masters">
+        <action
+            android:id="@+id/action_mastersCatalogFragment_to_newAppointmentFragment"
+            app:destination="@id/newAppointmentFragment" />
+    </fragment>
 </navigation>
