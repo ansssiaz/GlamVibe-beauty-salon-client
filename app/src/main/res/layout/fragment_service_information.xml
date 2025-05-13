@@ -57,8 +57,8 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/service_favourite_content_description"
             app:icon="@drawable/baseline_favorite_border_24"
-            app:iconTint="@color/mauve"
             app:iconSize="@dimen/icon_size"
+            app:iconTint="@color/mauve"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,11 +83,11 @@
             android:id="@+id/duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/lato"
             android:textColor="@color/brown"
             android:textSize="16sp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="@id/service_image"
             app:layout_constraintTop_toBottomOf="@id/service_name"
             tools:text="45" />
@@ -99,8 +99,8 @@
             android:layout_marginStart="2dp"
             android:contentDescription="@string/time_content_description"
             app:layout_constraintBottom_toBottomOf="@id/duration"
-            app:layout_constraintTop_toTopOf="@+id/duration"
             app:layout_constraintStart_toEndOf="@id/duration"
+            app:layout_constraintTop_toTopOf="@+id/duration"
             app:srcCompat="@drawable/baseline_access_time_24" />
 
         <TextView
@@ -123,19 +123,19 @@
             android:layout_height="12dp"
             android:contentDescription="@string/ruble_content_description"
             app:layout_constraintBottom_toBottomOf="@id/price"
-            app:layout_constraintTop_toTopOf="@+id/price"
             app:layout_constraintStart_toEndOf="@id/price"
+            app:layout_constraintTop_toTopOf="@+id/price"
             app:srcCompat="@drawable/baseline_currency_ruble_24" />
 
         <TextView
             android:id="@+id/old_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/lato"
             android:textColor="@color/brown"
             android:textSize="12sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@id/ruble"
             app:layout_constraintTop_toBottomOf="@id/service_name"
             tools:text="2300" />
@@ -165,13 +165,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/price"
             tools:ignore="VisualLintLongText"
-            tools:text = "Аппаратный маникюр - это метод ухода за ногтями, который осуществляется при помощи специального прибора с различными насадками. В отличие от классического маникюра, аппаратный выполняется без использования режущих инструментов.
+            tools:text="Аппаратный маникюр - это метод ухода за ногтями, который осуществляется при помощи специального прибора с различными насадками. В отличие от классического маникюра, аппаратный выполняется без использования режущих инструментов.
 С помощью насадок мастер моделирует форму ногтя, затем удаляет кутикулу, при необходимости слегка полирует ногтевую пластину. Аппаратный педикюр совершенно безопасен для здоровья ногтей, он не повреждает их. По окончании процедуры можно нанести любое декоративное покрытие на Ваш выбор: лак OPI, Vinylux или гель-лак.
 \nПреимущества аппаратного маникюра:
 \n1. Идеально для ногтей с быстро отрастающей кутикулой.
 \n2. Кутикула не отрезается, а сошлифовывается, что безопаснее с точки зрения гигиены.
 \n3. Процедура снижает риск расслаивания ногтей.
-\n4. Специальные насадки деликатно и мягко удаляют огрубевшую кожу."/>
-
+\n4. Специальные насадки деликатно и мягко удаляют огрубевшую кожу." />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

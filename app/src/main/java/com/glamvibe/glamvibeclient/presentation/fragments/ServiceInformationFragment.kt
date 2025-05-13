@@ -14,17 +14,15 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentServiceInformationBinding
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.service.ServiceViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
+import com.glamvibe.glamvibeclient.utils.dpToPx
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
@@ -95,6 +93,9 @@ class ServiceInformationFragment : Fragment() {
                     val radius =
                         requireContext().resources.getDimensionPixelSize(R.dimen.corner_radius)
 
+                    val widthPx = dpToPx(250, binding.root.context)
+                    val heightPx = dpToPx(250, binding.root.context)
+
                     if (imageUrl.isEmpty()) {
                         Glide.with(binding.root)
                             .load(R.drawable.empty_image)
@@ -103,13 +104,7 @@ class ServiceInformationFragment : Fragment() {
                     } else {
                         Glide.with(binding.root)
                             .load(imageUrl)
-                            .apply(
-                                RequestOptions()
-                                    .override(250, 250)
-                                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                    .downsample(DownsampleStrategy.AT_LEAST)
-                                    .encodeQuality(90)
-                            )
+                            .override(widthPx, heightPx)
                             .error(R.drawable.empty_image)
                             .transform(
                                 MultiTransformation(

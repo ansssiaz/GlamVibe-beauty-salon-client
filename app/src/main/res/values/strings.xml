@@ -78,4 +78,6 @@
     <string name="promotion_information_title">Information about promotion</string>
     <string name="new_appointment_title">New appointment</string>
     <string name="favourites_make_appointment_button">Appointment</string>
+    <string name="master_information_title">Information about master</string>
+    <string name="master_image_content_description">Master photo</string>
 </resources>

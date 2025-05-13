@@ -4,17 +4,15 @@ import android.annotation.SuppressLint
 import android.graphics.Paint
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.isVisible
-import com.glamvibe.glamvibeclient.R
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
+import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.CardServiceBinding
 import com.glamvibe.glamvibeclient.domain.model.Service
+import com.glamvibe.glamvibeclient.utils.dpToPx
 
 class ServiceViewHolder(private val binding: CardServiceBinding) :
     RecyclerView.ViewHolder(binding.root) {
@@ -51,6 +49,9 @@ class ServiceViewHolder(private val binding: CardServiceBinding) :
 
         updateFavourite(service.isFavourite)
 
+        val widthPx = dpToPx(250, binding.root.context)
+        val heightPx = dpToPx(250, binding.root.context)
+
         if (service.imageUrl.isEmpty()) {
             Glide.with(binding.root)
                 .load(R.drawable.empty_image)
@@ -59,13 +60,7 @@ class ServiceViewHolder(private val binding: CardServiceBinding) :
         } else {
             Glide.with(binding.root)
                 .load(service.imageUrl)
-                .apply(
-                    RequestOptions()
-                        .override(250, 250)
-                        .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .downsample(DownsampleStrategy.AT_LEAST)
-                        .encodeQuality(90)
-                )
+                .override(widthPx, heightPx)
                 .error(R.drawable.empty_image)
                 .transform(
                     MultiTransformation(

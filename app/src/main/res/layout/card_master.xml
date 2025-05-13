@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/master_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="8dp"
+    app:cardBackgroundColor="@color/champagne"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/brown">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/master_photo"
+            android:layout_width="154dp"
+            android:layout_height="198dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/master_image_content_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/empty_image"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/master_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway"
+            android:textColor="@color/brown"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/master_photo"
+            tools:text="Полищук Елизавета Дмитриевна" />
+
+        <TextView
+            android:id="@+id/specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/raleway"
+            android:textColor="@color/brown"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:minHeight="20dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/master_photo"
+            app:layout_constraintStart_toStartOf="@id/master_photo"
+            app:layout_constraintTop_toBottomOf="@id/master_name"
+            tools:text="Косметолог" />
+
+        <TextView
+            android:id="@+id/work_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway"
+            android:textColor="@color/brown"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialty"
+            tools:text="Опыт работы: 7 лет" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/make_appointment_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/mauve"
+            android:fontFamily="@font/raleway"
+            android:text="@string/favourites_make_appointment_button"
+            android:textColor="@color/ivory"
+            android:textSize="15sp"
+            app:cornerRadius="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
