@@ -10,4 +10,12 @@ class Constants {
         const val FRIDAY = "Пт"
         const val SATURDAY = "Сб"
     }
+
+    object Status {
+        const val IN_PROCESSING = "В обработке"
+        const val WAITING = "Ожидает выполнения"
+        const val DONE = "Выполнено"
+        const val CANCELLATION_BY_THE_CLIENT = "Отмена клиентом"
+        const val CANCELLATION_BY_THE_ADMINISTRATOR = "Отмена администратором"
+    }
 }

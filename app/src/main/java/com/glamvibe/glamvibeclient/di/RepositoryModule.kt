@@ -1,10 +1,12 @@
 package com.glamvibe.glamvibeclient.di
 
+import com.glamvibe.glamvibeclient.data.repository.appointments.AppointmentsRepositoryImpl
 import com.glamvibe.glamvibeclient.data.repository.client.ClientLocalRepositoryImpl
 import com.glamvibe.glamvibeclient.data.repository.client.ClientNetworkRepositoryImpl
 import com.glamvibe.glamvibeclient.data.repository.favourites.FavouritesRepositoryImpl
 import com.glamvibe.glamvibeclient.data.repository.masters.MastersRepositoryImpl
 import com.glamvibe.glamvibeclient.data.repository.services.ServicesRepositoryImpl
+import com.glamvibe.glamvibeclient.domain.repository.appointments.AppointmentsRepository
 import com.glamvibe.glamvibeclient.domain.repository.client.ClientLocalRepository
 import com.glamvibe.glamvibeclient.domain.repository.client.ClientNetworkRepository
 import com.glamvibe.glamvibeclient.domain.repository.favourites.FavouritesRepository
@@ -18,6 +20,7 @@ val repositoryModule = module {
     single { provideServicesRepository(get()) }
     single { provideFavouritesRepository(get()) }
     single { provideMastersRepository(get()) }
+    single { provideAppointmentsRepository(get()) }
 
     single<ClientNetworkRepository> {
         return@single ClientNetworkRepositoryImpl(get())
@@ -38,6 +41,10 @@ val repositoryModule = module {
     single<MastersRepository> {
         return@single MastersRepositoryImpl(get())
     }
+
+    single<AppointmentsRepository> {
+        return@single AppointmentsRepositoryImpl(get())
+    }
 }
 
 private fun provideClientNetworkRepository(repository: ClientNetworkRepositoryImpl): ClientNetworkRepository =
@@ -53,4 +60,7 @@ private fun provideFavouritesRepository(repository: FavouritesRepositoryImpl): F
     repository
 
 private fun provideMastersRepository(repository: MastersRepositoryImpl): MastersRepository =
+    repository
+
+private fun provideAppointmentsRepository(repository: AppointmentsRepositoryImpl): AppointmentsRepository =
     repository

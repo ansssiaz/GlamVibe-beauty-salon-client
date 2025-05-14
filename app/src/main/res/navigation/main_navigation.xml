@@ -77,7 +77,11 @@
         android:id="@+id/appointmentsFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.AppointmentsFragment"
         android:label="AppointmentsFragment"
-        tools:layout="@layout/fragment_appointments"/>
+        tools:layout="@layout/fragment_appointments">
+        <action
+            android:id="@+id/action_appointmentsFragment_to_newAppointmentFragment"
+            app:destination="@id/newAppointmentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/servicesCatalogFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.ServicesCatalogFragment"
@@ -91,9 +95,5 @@
         android:id="@+id/mastersCatalogFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.MastersCatalogFragment"
         android:label="MastersCatalogFragment"
-        tools:layout="@layout/fragment_catalog_masters">
-        <action
-            android:id="@+id/action_mastersCatalogFragment_to_newAppointmentFragment"
-            app:destination="@id/newAppointmentFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_catalog_masters"/>
 </navigation>

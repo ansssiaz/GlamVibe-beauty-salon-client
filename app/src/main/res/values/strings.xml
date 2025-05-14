@@ -80,4 +80,17 @@
     <string name="favourites_make_appointment_button">Appointment</string>
     <string name="master_information_title">Information about master</string>
     <string name="master_image_content_description">Master photo</string>
+    <string name="current_appointments_title">Current appointments</string>
+    <string name="no_current_appointments_title">You don\'t have any current appointments.</string>
+    <string name="last_appointments_title">Last appointments</string>
+    <string name="no_last_appointments_title">You don\'t have last appointments.</string>
+    <string name="status_icon_content_description">Status icon</string>
+    <string name="reschedule">Reschedule</string>
+    <string name="cancel">Cancel</string>
+    <string name="menu_icon_content_description">Menu icon</string>
+    <string name="comment">Комментарий</string>
+    <string name="cancel_reason_text">Are you sure you want to cancel the appointment?</string>
+    <string name="reason_text">Enter text</string>
+    <string name="ok_button">Yes</string>
+    <string name="exit_button">No</string>
 </resources>

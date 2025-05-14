@@ -79,4 +79,17 @@
     <string name="favourites_make_appointment_button">Записаться</string>
     <string name="master_information_title">Информация о мастере</string>
     <string name="master_image_content_description">Фото мастера</string>
+    <string name="current_appointments_title">Предстоящие записи</string>
+    <string name="no_current_appointments_title">Нет записей</string>
+    <string name="last_appointments_title">Прошлые записи</string>
+    <string name="no_last_appointments_title">Нет записей</string>
+    <string name="status_icon_content_description">Иконка статуса</string>
+    <string name="reschedule">Перенести</string>
+    <string name="cancel">Отменить</string>
+    <string name="menu_icon_content_description">Иконка меню</string>
+    <string name="comment">Комментарий:</string>
+    <string name="cancel_reason_text">Вы уверены, что хотите отменить запись?</string>
+    <string name="reason_text">Введите текст</string>
+    <string name="ok_button">Да</string>
+    <string name="exit_button">Нет</string>
 </resources>

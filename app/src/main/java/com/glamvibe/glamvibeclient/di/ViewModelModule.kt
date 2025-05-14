@@ -1,5 +1,6 @@
 package com.glamvibe.glamvibeclient.di
 
+import com.glamvibe.glamvibeclient.presentation.viewmodel.appointments.AppointmentsViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.masters.MastersViewModel
@@ -32,5 +33,9 @@ val viewModelModule = module {
 
     viewModel {
         MastersViewModel(get())
+    }
+
+    viewModel { (clientId: Int) ->
+        AppointmentsViewModel(get(), clientId)
     }
 }
