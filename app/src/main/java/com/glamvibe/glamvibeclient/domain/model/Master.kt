@@ -2,6 +2,7 @@ package com.glamvibe.glamvibeclient.domain.model
 
 import com.glamvibe.glamvibeclient.utils.Constants
 import kotlinx.datetime.Clock
+import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
@@ -39,6 +40,18 @@ fun WeekDay.getStringByWeekDay(): String {
     }
 }
 
+fun DayOfWeek.toWeekDay(): WeekDay {
+    return when (this) {
+        DayOfWeek.MONDAY -> WeekDay.MONDAY
+        DayOfWeek.TUESDAY -> WeekDay.TUESDAY
+        DayOfWeek.WEDNESDAY -> WeekDay.WEDNESDAY
+        DayOfWeek.THURSDAY -> WeekDay.THURSDAY
+        DayOfWeek.FRIDAY -> WeekDay.FRIDAY
+        DayOfWeek.SATURDAY -> WeekDay.SATURDAY
+        DayOfWeek.SUNDAY -> WeekDay.SUNDAY
+    }
+}
+
 @Serializable
 data class WorkingDay(
     val weekDay: WeekDay,
@@ -63,6 +76,14 @@ data class Master(
     @Contextual val dateOfEmployment: LocalDate = Clock.System.now()
         .toLocalDateTime(TimeZone.currentSystemDefault()).date,
     val workExperience: Int = 0,
+    val appointments: List<CurrentAppointment> = emptyList()
+)
+
+@Serializable
+data class CurrentAppointment(
+    @Contextual val date: LocalDate,
+    @Contextual val time: LocalTime,
+    val weekDay: WeekDay,
 )
 
 

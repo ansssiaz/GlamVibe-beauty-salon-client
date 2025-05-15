@@ -93,4 +93,10 @@
     <string name="reason_text">Enter text</string>
     <string name="ok_button">Yes</string>
     <string name="exit_button">No</string>
+    <string name="reschedule_appointment_title">Выберите новую дату и время записи</string>
+    <string name="reschedule_button">Перенести запись</string>
+    <string name="service_appointment_title">Услуга:</string>
+    <string name="reschedule_appointment_fragment">Перенос записи</string>
+    <string name="available_time_title">Доступное время</string>
+    <string name="no_available_time_title">В выбранный день нет доступных часов для записи</string>
 </resources>

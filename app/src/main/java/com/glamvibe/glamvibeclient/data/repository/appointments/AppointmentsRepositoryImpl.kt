@@ -9,6 +9,9 @@ class AppointmentsRepositoryImpl(private val api: AppointmentsApi) : Appointment
     override suspend fun getAppointments(clientId: Int): List<Appointment> =
         api.getAppointments(clientId)
 
+    override suspend fun getAppointment(appointmentId: Int, clientId: Int): Appointment =
+        api.getAppointment(appointmentId, clientId)
+
     override suspend fun makeAppointment(clientId: Int): Appointment = api.makeAppointment(clientId)
 
     override suspend fun rescheduleAppointment(

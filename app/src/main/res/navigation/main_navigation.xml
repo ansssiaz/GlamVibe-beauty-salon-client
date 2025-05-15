@@ -79,8 +79,8 @@
         android:label="AppointmentsFragment"
         tools:layout="@layout/fragment_appointments">
         <action
-            android:id="@+id/action_appointmentsFragment_to_newAppointmentFragment"
-            app:destination="@id/newAppointmentFragment" />
+            android:id="@+id/action_appointmentsFragment_to_rescheduleAppointmentFragment"
+            app:destination="@id/rescheduleAppointmentFragment" />
     </fragment>
     <fragment
         android:id="@+id/servicesCatalogFragment"
@@ -96,4 +96,9 @@
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.MastersCatalogFragment"
         android:label="MastersCatalogFragment"
         tools:layout="@layout/fragment_catalog_masters"/>
+    <fragment
+        android:id="@+id/rescheduleAppointmentFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.RescheduleAppointmentFragment"
+        android:label="RescheduleAppointmentFragment"
+        tools:layout="@layout/fragment_reschedule_appointment"/>
 </navigation>

@@ -11,6 +11,12 @@ interface AppointmentsApi {
     @GET("appointments/{clientId}")
     suspend fun getAppointments(@Path("clientId") clientId: Int): List<Appointment>
 
+    @GET("appointments/{appointmentId}/clients/{clientId}")
+    suspend fun getAppointment(
+        @Path("appointmentId") appointmentId: Int,
+        @Path("clientId") clientId: Int
+    ): Appointment
+
     @POST("appointments/{clientId}")
     suspend fun makeAppointment(@Path("clientId") clientId: Int): Appointment
 

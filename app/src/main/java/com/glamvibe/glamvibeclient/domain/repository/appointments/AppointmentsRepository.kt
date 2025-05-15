@@ -5,6 +5,7 @@ import com.glamvibe.glamvibeclient.domain.model.Appointment
 
 interface AppointmentsRepository {
     suspend fun getAppointments(clientId: Int): List<Appointment>
+    suspend fun getAppointment(appointmentId: Int, clientId: Int): Appointment
     suspend fun makeAppointment(clientId: Int): Appointment
     suspend fun rescheduleAppointment(
         appointmentId: Int,

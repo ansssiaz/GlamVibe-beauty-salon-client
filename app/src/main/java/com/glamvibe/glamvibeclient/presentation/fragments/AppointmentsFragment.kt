@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -51,8 +52,10 @@ class AppointmentsFragment : Fragment() {
         val currentAppointmentsAdapter = CurrentAppointmentsAdapter(
             object : CurrentAppointmentsAdapter.CurrentAppointmentsListener {
                 override fun onRescheduleClicked(appointment: Appointment) {
-                    findNavController().navigate(R.id.action_appointmentsFragment_to_newAppointmentFragment)
-                    //передать данные старой записи
+                    findNavController().navigate(
+                        R.id.action_appointmentsFragment_to_rescheduleAppointmentFragment,
+                        bundleOf(RescheduleAppointmentFragment.ARG_ID to appointment.id)
+                    )
                 }
 
                 override fun onCancelClicked(appointment: Appointment) {

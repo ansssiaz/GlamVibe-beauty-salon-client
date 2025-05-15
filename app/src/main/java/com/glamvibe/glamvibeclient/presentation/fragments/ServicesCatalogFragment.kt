@@ -97,10 +97,7 @@ class ServicesCatalogFragment : Fragment() {
                 override fun onServiceImageClicked(service: Service) {
                     findNavController().navigate(
                         R.id.action_servicesCatalogFragment_to_serviceInformationFragment,
-                        bundleOf(
-                            ServiceInformationFragment.ARG_ID to service.id,
-
-                            )
+                        bundleOf(ServiceInformationFragment.ARG_ID to service.id)
                     )
                 }
             }
