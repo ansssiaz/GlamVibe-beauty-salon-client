@@ -1,8 +1,11 @@
 package com.glamvibe.glamvibeclient.di
 
+import com.glamvibe.glamvibeclient.presentation.viewmodel.rescheduleAppointment.RescheduleAppointmentViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.appointments.AppointmentsViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.client.ClientViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.masters.MastersViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.newAppointment.NewAppointmentViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.newClient.NewClientViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.service.ServiceViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.services.ServicesViewModel
@@ -32,5 +35,17 @@ val viewModelModule = module {
 
     viewModel {
         MastersViewModel(get())
+    }
+
+    viewModel { (clientId: Int) ->
+        AppointmentsViewModel(get(), clientId)
+    }
+
+    viewModel { (appointmentId: Int, clientId: Int) ->
+        RescheduleAppointmentViewModel(get(), get(), appointmentId, clientId)
+    }
+
+    viewModel { (clientId: Int) ->
+        NewAppointmentViewModel(get(), get(), get(), clientId)
     }
 }

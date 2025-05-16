@@ -80,4 +80,27 @@
     <string name="favourites_make_appointment_button">Appointment</string>
     <string name="master_information_title">Information about master</string>
     <string name="master_image_content_description">Master photo</string>
+    <string name="current_appointments_title">Current appointments</string>
+    <string name="no_current_appointments_title">You don\'t have any current appointments.</string>
+    <string name="last_appointments_title">Last appointments</string>
+    <string name="no_last_appointments_title">You don\'t have last appointments.</string>
+    <string name="status_icon_content_description">Status icon</string>
+    <string name="reschedule">Reschedule</string>
+    <string name="cancel">Cancel</string>
+    <string name="menu_icon_content_description">Menu icon</string>
+    <string name="comment">Комментарий</string>
+    <string name="cancel_reason_text">Are you sure you want to cancel the appointment?</string>
+    <string name="reason_text">Enter text</string>
+    <string name="ok_button">Yes</string>
+    <string name="exit_button">No</string>
+    <string name="reschedule_appointment_title">Выберите новую дату и время записи</string>
+    <string name="reschedule_button">Перенести запись</string>
+    <string name="service_appointment_title">Услуга:</string>
+    <string name="reschedule_appointment_fragment">Rescheduling the appointment</string>
+    <string name="available_time_title">Available times</string>
+    <string name="no_available_time_title">В выбранный день нет доступных часов для записи</string>
+    <string name="make_appointment_button">Make an appointment</string>
+    <string name="make_appointment_service_title">Выберите услугу</string>
+    <string name="make_appointment_master_title">Выберите мастера</string>
+    <string name="make_appointment_datetime_title">Выберите дату и время записи</string>
 </resources>

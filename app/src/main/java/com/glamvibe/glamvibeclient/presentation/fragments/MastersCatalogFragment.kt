@@ -10,11 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.glamvibe.glamvibeclient.R
 import com.glamvibe.glamvibeclient.databinding.FragmentCatalogMastersBinding
-import com.glamvibe.glamvibeclient.domain.model.Master
 import com.glamvibe.glamvibeclient.presentation.adapter.masters.MastersAdapter
 import com.glamvibe.glamvibeclient.presentation.viewmodel.masters.MastersViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.toolbar.ToolbarViewModel
@@ -64,14 +62,7 @@ class MastersCatalogFragment : Fragment() {
             }
         }
 
-        val mastersAdapter = MastersAdapter(
-            object : MastersAdapter.MastersListener {
-                override fun onMakeAppointmentButtonClicked(master: Master) {
-                    findNavController().navigate(R.id.action_mastersCatalogFragment_to_newAppointmentFragment)
-                }
-
-            }
-        )
+        val mastersAdapter = MastersAdapter()
 
         binding.listOfMasters.isNestedScrollingEnabled = false
         binding.listOfMasters.layoutManager = GridLayoutManager(requireContext(), 2)

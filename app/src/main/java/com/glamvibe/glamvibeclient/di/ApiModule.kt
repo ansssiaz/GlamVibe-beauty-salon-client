@@ -1,6 +1,7 @@
 package com.glamvibe.glamvibeclient.di
 
 import com.glamvibe.glamvibeclient.BuildConfig
+import com.glamvibe.glamvibeclient.data.api.AppointmentsApi
 import com.glamvibe.glamvibeclient.data.api.AuthInterceptor
 import com.glamvibe.glamvibeclient.data.api.ClientApi
 import com.glamvibe.glamvibeclient.data.api.FavouritesApi
@@ -22,6 +23,7 @@ val apiModule = module {
     single { provideServicesApi(get()) }
     single { provideFavouritesApi(get()) }
     single { provideMastersApi(get()) }
+    single { provideAppointmentsApi(get()) }
 }
 
 private val contentType = "application/json".toMediaType()
@@ -54,3 +56,6 @@ private fun provideFavouritesApi(retrofit: Retrofit): FavouritesApi =
 
 private fun provideMastersApi(retrofit: Retrofit): MastersApi =
     retrofit.create(MastersApi::class.java)
+
+private fun provideAppointmentsApi(retrofit: Retrofit): AppointmentsApi =
+    retrofit.create(AppointmentsApi::class.java)

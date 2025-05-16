@@ -39,7 +39,11 @@
         android:id="@+id/newAppointmentFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.NewAppointmentFragment"
         android:label="NewAppointmentFragment"
-        tools:layout="@layout/fragment_new_appointment"/>
+        tools:layout="@layout/fragment_new_appointment">
+        <action
+            android:id="@+id/action_newAppointmentFragment_to_appointmentsFragment"
+            app:destination="@id/appointmentsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/promotionFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.PromotionFragment"
@@ -77,7 +81,11 @@
         android:id="@+id/appointmentsFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.AppointmentsFragment"
         android:label="AppointmentsFragment"
-        tools:layout="@layout/fragment_appointments"/>
+        tools:layout="@layout/fragment_appointments">
+        <action
+            android:id="@+id/action_appointmentsFragment_to_rescheduleAppointmentFragment"
+            app:destination="@id/rescheduleAppointmentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/servicesCatalogFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.ServicesCatalogFragment"
@@ -91,9 +99,10 @@
         android:id="@+id/mastersCatalogFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.MastersCatalogFragment"
         android:label="MastersCatalogFragment"
-        tools:layout="@layout/fragment_catalog_masters">
-        <action
-            android:id="@+id/action_mastersCatalogFragment_to_newAppointmentFragment"
-            app:destination="@id/newAppointmentFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_catalog_masters"/>
+    <fragment
+        android:id="@+id/rescheduleAppointmentFragment"
+        android:name="com.glamvibe.glamvibeclient.presentation.fragments.RescheduleAppointmentFragment"
+        android:label="RescheduleAppointmentFragment"
+        tools:layout="@layout/fragment_reschedule_appointment"/>
 </navigation>

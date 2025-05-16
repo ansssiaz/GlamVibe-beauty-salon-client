@@ -13,95 +13,67 @@
         android:background="@color/ivory">
 
         <TextView
-            android:id="@+id/make_appointment_service_title"
-            android:layout_width="match_parent"
+            android:id="@+id/service"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
             android:fontFamily="@font/raleway"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="@string/make_appointment_service_title"
+            android:textColor="@color/brown"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reschedule_appointment_title"
+            tools:text="Услуга: маникюр" />
+
+        <TextView
+            android:id="@+id/master"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/raleway"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/brown"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/service"
+            tools:text="Мастер: Швецова В.С." />
+
+        <TextView
+            android:id="@+id/reschedule_appointment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/raleway"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:text="@string/reschedule_appointment_title"
+            android:textAlignment="center"
             android:textColor="@color/brown"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Spinner
-            android:id="@+id/service_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/spinner_background"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:pointerIcon="arrow"
-            android:popupBackground="@color/champagne"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/make_appointment_service_title" />
-
-        <TextView
-            android:id="@+id/make_appointment_master_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/raleway"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/make_appointment_master_title"
-            android:textColor="@color/brown"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/service_spinner" />
-
-        <Spinner
-            android:id="@+id/master_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/spinner_background"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:pointerIcon="arrow"
-            android:popupBackground="@color/champagne"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/make_appointment_master_title" />
-
-        <TextView
-            android:id="@+id/make_appointment_datetime_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/raleway"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/make_appointment_datetime_title"
-            android:textColor="@color/brown"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/master_spinner" />
-
         <DatePicker
             android:id="@+id/appointment_date_picker"
             android:layout_width="300dp"
             android:layout_height="435dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/date_picker_background"
             android:headerBackground="@drawable/date_picker_header_background"
             android:theme="@style/DatePicker"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/make_appointment_datetime_title" />
+            app:layout_constraintTop_toBottomOf="@id/master" />
 
         <TextView
             android:id="@+id/available_time_title"
@@ -155,20 +127,20 @@
             app:singleSelection="true" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/make_appointment_button"
+            android:id="@+id/reschedule_button"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/mauve"
             android:fontFamily="@font/raleway"
-            android:text="@string/make_appointment_button"
+            android:text="@string/reschedule_button"
             android:textColor="@color/ivory"
             android:textSize="17sp"
             app:cornerRadius="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/time_chip_group"
             app:layout_constraintTop_toBottomOf="@id/time_chip_group"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="VisualLintButtonSize,TextContrastCheck,TextSizeCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
