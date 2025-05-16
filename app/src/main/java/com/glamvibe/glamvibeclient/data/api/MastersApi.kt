@@ -14,4 +14,7 @@ interface MastersApi {
 
     @GET("masters/{masterId}/appointments")
     suspend fun getMasterWithCurrentAppointments(@Path("masterId") masterId: Int): MasterWithAppointments
+
+    @GET("masters/appointments")
+    suspend fun getMastersWithCurrentAppointments(): List<MasterWithAppointments>
 }

@@ -1,4 +1,4 @@
-package com.glamvibe.glamvibeclient.presentation.viewmodel.appointment
+package com.glamvibe.glamvibeclient.presentation.viewmodel.rescheduleAppointment
 
 import com.glamvibe.glamvibeclient.domain.model.Appointment
 import com.glamvibe.glamvibeclient.domain.model.CurrentAppointment
@@ -7,7 +7,7 @@ import com.glamvibe.glamvibeclient.utils.Status
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalTime
 
-data class AppointmentUiState(
+data class RescheduleAppointmentUiState(
     val appointment: Appointment? = null,
     val masterSchedule: List<WorkingDay> = emptyList(),
     val masterCurrentAppointments: List<CurrentAppointment> = emptyList(),

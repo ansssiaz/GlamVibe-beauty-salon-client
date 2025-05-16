@@ -11,6 +11,7 @@ data class MasterWithAppointments(
     val lastname: String,
     val name: String,
     val patronymic: String?,
+    val categories: List<String> = emptyList(),
     val schedule: List<WorkingDay> = emptyList(),
     val currentAppointments: List<CurrentAppointment> = emptyList()
 )
@@ -21,5 +22,6 @@ fun MasterWithAppointments.toMaster(): Master = Master(
     name = name,
     patronymic = patronymic,
     schedule = schedule,
+    categories = categories,
     appointments = currentAppointments
 )

@@ -1,5 +1,6 @@
 package com.glamvibe.glamvibeclient.data.api
 
+import com.glamvibe.glamvibeclient.data.model.request.NewAppointment
 import com.glamvibe.glamvibeclient.data.model.request.NewAppointmentDateTime
 import com.glamvibe.glamvibeclient.domain.model.Appointment
 import retrofit2.http.Body
@@ -18,7 +19,10 @@ interface AppointmentsApi {
     ): Appointment
 
     @POST("appointments/{clientId}")
-    suspend fun makeAppointment(@Path("clientId") clientId: Int): Appointment
+    suspend fun makeAppointment(
+        @Path("clientId") clientId: Int,
+        @Body newAppointment: NewAppointment
+    ): Appointment
 
     @POST("appointments/cancel/{appointmentId}/clients/{clientId}")
     suspend fun cancelAppointment(

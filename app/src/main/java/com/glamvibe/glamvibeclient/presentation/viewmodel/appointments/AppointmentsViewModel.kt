@@ -21,7 +21,7 @@ class AppointmentsViewModel(
         getAppointments()
     }
 
-    private fun getAppointments() {
+    fun getAppointments() {
         _state.update { it.copy(status = Status.Loading) }
 
         viewModelScope.launch {

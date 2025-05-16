@@ -1,4 +1,4 @@
-package com.glamvibe.glamvibeclient.presentation.viewmodel.appointment
+package com.glamvibe.glamvibeclient.presentation.viewmodel.rescheduleAppointment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,13 +16,13 @@ import kotlinx.datetime.DayOfWeek
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalTime
 
-class AppointmentViewModel(
+class RescheduleAppointmentViewModel(
     private val appointmentsRepository: AppointmentsRepository,
     private val mastersRepository: MastersRepository,
     private val appointmentId: Int,
     private val clientId: Int
 ) : ViewModel() {
-    private var _state = MutableStateFlow(AppointmentUiState())
+    private var _state = MutableStateFlow(RescheduleAppointmentUiState())
     val state = _state.asStateFlow()
 
     init {

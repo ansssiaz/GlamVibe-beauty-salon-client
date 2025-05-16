@@ -98,4 +98,8 @@
     <string name="reschedule_appointment_fragment">Перенос записи</string>
     <string name="available_time_title">Доступное время</string>
     <string name="no_available_time_title">В выбранный день нет доступных часов для записи</string>
+    <string name="make_appointment_button">Записаться</string>
+    <string name="make_appointment_service_title">1. Услуга</string>
+    <string name="make_appointment_master_title">2. Мастер</string>
+    <string name="make_appointment_datetime_title">3. Дата и время записи</string>
 </resources>

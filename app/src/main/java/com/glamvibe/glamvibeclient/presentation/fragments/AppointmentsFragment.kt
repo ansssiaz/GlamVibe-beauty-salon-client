@@ -49,6 +49,20 @@ class AppointmentsFragment : Fragment() {
             )
         }
 
+        requireActivity().supportFragmentManager.setFragmentResultListener(
+            RescheduleAppointmentFragment.APPOINTMENT_RESCHEDULED_RESULT,
+            viewLifecycleOwner
+        ) { _, _ ->
+            appointmentsViewModel.getAppointments()
+        }
+
+        requireActivity().supportFragmentManager.setFragmentResultListener(
+            NewAppointmentFragment.APPOINTMENT_CREATED_RESULT,
+            viewLifecycleOwner
+        ) { _, _ ->
+            appointmentsViewModel.getAppointments()
+        }
+
         val currentAppointmentsAdapter = CurrentAppointmentsAdapter(
             object : CurrentAppointmentsAdapter.CurrentAppointmentsListener {
                 override fun onRescheduleClicked(appointment: Appointment) {

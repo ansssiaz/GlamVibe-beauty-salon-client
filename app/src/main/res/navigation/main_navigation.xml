@@ -39,7 +39,11 @@
         android:id="@+id/newAppointmentFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.NewAppointmentFragment"
         android:label="NewAppointmentFragment"
-        tools:layout="@layout/fragment_new_appointment"/>
+        tools:layout="@layout/fragment_new_appointment">
+        <action
+            android:id="@+id/action_newAppointmentFragment_to_appointmentsFragment"
+            app:destination="@id/appointmentsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/promotionFragment"
         android:name="com.glamvibe.glamvibeclient.presentation.fragments.PromotionFragment"

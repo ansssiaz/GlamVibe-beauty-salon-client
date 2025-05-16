@@ -10,4 +10,6 @@ class MastersRepositoryImpl(private val api: MastersApi) : MastersRepository {
     override suspend fun getMaster(masterId: Int): Master = api.getMaster(masterId)
     override suspend fun getMasterWithCurrentAppointments(masterId: Int): Master =
         api.getMasterWithCurrentAppointments(masterId).toMaster()
+    override suspend fun getMastersWithCurrentAppointments(): List<Master> =
+        api.getMastersWithCurrentAppointments().map { it.toMaster() }
 }
