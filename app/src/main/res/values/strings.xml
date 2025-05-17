@@ -103,4 +103,7 @@
     <string name="make_appointment_service_title">Выберите услугу</string>
     <string name="make_appointment_master_title">Выберите мастера</string>
     <string name="make_appointment_datetime_title">Выберите дату и время записи</string>
+    <string name="suggestions_title">Предложения для вас</string>
+    <string name="promotions_title">Акции</string>
+    <string name="promotion_services_title">Услуги</string>
 </resources>

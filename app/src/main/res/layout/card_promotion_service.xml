@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/service_item"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ivory">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="8dp"
+    app:cardBackgroundColor="@color/champagne"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/brown">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,11 +19,9 @@
 
         <ImageView
             android:id="@+id/service_image"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginStart="114dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="114dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
             android:contentDescription="@string/service_image_content_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,9 +31,9 @@
 
         <ImageView
             android:id="@+id/promotion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="-38dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="-20dp"
             android:layout_marginTop="-15dp"
             android:contentDescription="@string/promotion_circle_content_description"
             app:layout_constraintStart_toStartOf="@id/service_image"
@@ -42,7 +47,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato"
             android:textColor="@color/ivory"
-            android:textSize="22sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/promotion"
             app:layout_constraintEnd_toEndOf="@id/promotion"
             app:layout_constraintStart_toStartOf="@id/promotion"
@@ -57,63 +62,34 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/service_favourite_content_description"
             app:icon="@drawable/baseline_favorite_border_24"
-            app:iconSize="@dimen/icon_size"
             app:iconTint="@color/mauve"
+            app:iconSize="@dimen/icon_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/service_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/raleway"
-            android:textAlignment="center"
             android:textColor="@color/brown"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/service_image"
-            tools:text="Аппаратный маникюр" />
-
-        <TextView
-            android:id="@+id/duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/lato"
-            android:textColor="@color/brown"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/service_image"
-            app:layout_constraintTop_toBottomOf="@id/service_name"
-            tools:text="45" />
-
-        <ImageView
-            android:id="@+id/time"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="2dp"
-            android:contentDescription="@string/time_content_description"
-            app:layout_constraintBottom_toBottomOf="@id/duration"
-            app:layout_constraintStart_toEndOf="@id/duration"
-            app:layout_constraintTop_toTopOf="@+id/duration"
-            app:srcCompat="@drawable/baseline_access_time_24" />
+            tools:text="Наращивание ресниц" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/lato"
             android:textColor="@color/brown"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/time"
+            app:layout_constraintEnd_toEndOf="@id/service_image"
+            app:layout_constraintStart_toStartOf="@id/service_image"
             app:layout_constraintTop_toBottomOf="@id/service_name"
             tools:text="2000" />
 
@@ -151,41 +127,46 @@
             app:srcCompat="@drawable/baseline_currency_ruble_24" />
 
         <TextView
-            android:id="@+id/service_description"
-            android:layout_width="match_parent"
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/raleway"
-            android:textSize="14sp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/lato"
+            android:textColor="@color/brown"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/price"
-            tools:ignore="VisualLintLongText"
-            tools:text="Аппаратный маникюр - это метод ухода за ногтями, который осуществляется при помощи специального прибора с различными насадками. В отличие от классического маникюра, аппаратный выполняется без использования режущих инструментов.
-С помощью насадок мастер моделирует форму ногтя, затем удаляет кутикулу, при необходимости слегка полирует ногтевую пластину. Аппаратный педикюр совершенно безопасен для здоровья ногтей, он не повреждает их. По окончании процедуры можно нанести любое декоративное покрытие на Ваш выбор: лак OPI, Vinylux или гель-лак.
-\nПреимущества аппаратного маникюра:
-\n1. Идеально для ногтей с быстро отрастающей кутикулой.
-\n2. Кутикула не отрезается, а сошлифовывается, что безопаснее с точки зрения гигиены.
-\n3. Процедура снижает риск расслаивания ногтей.
-\n4. Специальные насадки деликатно и мягко удаляют огрубевшую кожу." />
+            tools:text="45" />
+
+        <ImageView
+            android:id="@+id/time"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="2dp"
+            android:contentDescription="@string/time_content_description"
+            app:layout_constraintBottom_toBottomOf="@id/duration"
+            app:layout_constraintStart_toEndOf="@id/duration"
+            app:layout_constraintTop_toTopOf="@+id/duration"
+            app:srcCompat="@drawable/baseline_access_time_24" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/make_appointment_button"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/mauve"
             android:fontFamily="@font/raleway"
-            android:text="@string/make_appointment_button"
+            android:text="@string/favourites_make_appointment_button"
             android:textColor="@color/ivory"
-            android:textSize="17sp"
-            android:layout_marginEnd="16dp"
+            android:textSize="15sp"
             app:cornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/service_description"
-            tools:ignore="VisualLintButtonSize,TextContrastCheck,TextSizeCheck" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/duration"
+            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</com.google.android.material.card.MaterialCardView>

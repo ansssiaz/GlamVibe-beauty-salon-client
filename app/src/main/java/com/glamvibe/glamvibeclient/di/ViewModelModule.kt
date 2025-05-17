@@ -7,6 +7,8 @@ import com.glamvibe.glamvibeclient.presentation.viewmodel.favourites.FavouritesV
 import com.glamvibe.glamvibeclient.presentation.viewmodel.masters.MastersViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.newAppointment.NewAppointmentViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.newClient.NewClientViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.promotion.PromotionViewModel
+import com.glamvibe.glamvibeclient.presentation.viewmodel.promotions.PromotionsViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.service.ServiceViewModel
 import com.glamvibe.glamvibeclient.presentation.viewmodel.services.ServicesViewModel
 import org.koin.core.module.dsl.viewModel
@@ -47,5 +49,13 @@ val viewModelModule = module {
 
     viewModel { (clientId: Int) ->
         NewAppointmentViewModel(get(), get(), get(), clientId)
+    }
+
+    viewModel {
+        PromotionsViewModel(get())
+    }
+
+    viewModel { (clientId: Int) ->
+        PromotionViewModel(get(), clientId)
     }
 }
