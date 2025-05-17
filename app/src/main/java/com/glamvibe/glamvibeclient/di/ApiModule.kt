@@ -6,6 +6,7 @@ import com.glamvibe.glamvibeclient.data.api.AuthInterceptor
 import com.glamvibe.glamvibeclient.data.api.ClientApi
 import com.glamvibe.glamvibeclient.data.api.FavouritesApi
 import com.glamvibe.glamvibeclient.data.api.MastersApi
+import com.glamvibe.glamvibeclient.data.api.PromotionsApi
 import com.glamvibe.glamvibeclient.data.api.ServicesApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -24,6 +25,7 @@ val apiModule = module {
     single { provideFavouritesApi(get()) }
     single { provideMastersApi(get()) }
     single { provideAppointmentsApi(get()) }
+    single { providePromotionsApi(get()) }
 }
 
 private val contentType = "application/json".toMediaType()
@@ -59,3 +61,6 @@ private fun provideMastersApi(retrofit: Retrofit): MastersApi =
 
 private fun provideAppointmentsApi(retrofit: Retrofit): AppointmentsApi =
     retrofit.create(AppointmentsApi::class.java)
+
+private fun providePromotionsApi(retrofit: Retrofit): PromotionsApi =
+    retrofit.create(PromotionsApi::class.java)

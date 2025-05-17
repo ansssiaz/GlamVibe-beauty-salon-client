@@ -2,4 +2,5 @@
 <resources>
     <dimen name="corner_radius">4dp</dimen>
     <dimen name="icon_size">28dp</dimen>
+    <dimen name="icon_size_small">24dp</dimen>
 </resources>

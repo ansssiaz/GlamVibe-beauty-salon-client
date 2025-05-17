@@ -66,7 +66,7 @@ class NewAppointmentViewModel(
 
             val filtered = if (service != null) {
                 when {
-                    serviceName == null || serviceName == "Все услуги" -> state.masters
+                    serviceName == null || serviceName == "Выберите услугу" -> state.masters
                     else -> state.masters.filter { it.categories.contains(service.category) }
                 }
 
