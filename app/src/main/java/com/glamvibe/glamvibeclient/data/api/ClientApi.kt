@@ -6,7 +6,9 @@ import com.glamvibe.glamvibeclient.data.model.request.LogInClient
 import com.glamvibe.glamvibeclient.data.model.request.NewClient
 import com.glamvibe.glamvibeclient.data.model.request.RefreshToken
 import com.glamvibe.glamvibeclient.data.model.request.UpdatedClient
+import com.glamvibe.glamvibeclient.domain.model.Service
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -26,6 +28,9 @@ interface ClientApi {
 
     @POST("me")
     suspend fun getProfileInformation(@Body refreshToken: RefreshToken): ClientResponse
+
+    @GET("me/recommendations/{id}")
+    suspend fun getRecommendations(@Path("id") id: Int): List<Service>
 
     @PUT("me/{id}")
     suspend fun updateProfileInformation(@Path("id") id: Int, @Body newClient: UpdatedClient): ClientResponse

@@ -190,6 +190,8 @@ class NewAppointmentFragment : Fragment() {
 
                 binding.timeChipGroup.isSingleSelection = true
 
+                //binding.noAvailableTimeTitle.isVisible = state.availableSlots.isEmpty()
+
                 state.availableSlots.forEach { time ->
                     val chip = Chip(requireContext())
                     chip.id = View.generateViewId()
