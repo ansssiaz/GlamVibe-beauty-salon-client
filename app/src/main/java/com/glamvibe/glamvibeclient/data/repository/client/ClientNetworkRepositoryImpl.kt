@@ -7,6 +7,7 @@ import com.glamvibe.glamvibeclient.data.model.response.TokenPair
 import com.glamvibe.glamvibeclient.data.model.request.LogInClient
 import com.glamvibe.glamvibeclient.data.model.request.NewClient
 import com.glamvibe.glamvibeclient.data.model.request.UpdatedClient
+import com.glamvibe.glamvibeclient.domain.model.Service
 import com.glamvibe.glamvibeclient.domain.repository.client.ClientNetworkRepository
 
 class ClientNetworkRepositoryImpl(private val api: ClientApi) : ClientNetworkRepository {
@@ -29,6 +30,11 @@ class ClientNetworkRepositoryImpl(private val api: ClientApi) : ClientNetworkRep
         return api.getProfileInformation(token)
     }
 
-    override suspend fun updateProfileInformation(id: Int, newClient: UpdatedClient): ClientResponse =
+    override suspend fun updateProfileInformation(
+        id: Int,
+        newClient: UpdatedClient
+    ): ClientResponse =
         api.updateProfileInformation(id, newClient)
+
+    override suspend fun getRecommendations(id: Int): List<Service> = api.getRecommendations(id)
 }

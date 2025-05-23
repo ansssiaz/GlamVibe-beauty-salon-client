@@ -1,4 +1,4 @@
-package com.glamvibe.glamvibeclient.presentation.adapter.promotionServices
+package com.glamvibe.glamvibeclient.presentation.adapter.recommendations
 
 import android.annotation.SuppressLint
 import android.graphics.Paint
@@ -7,22 +7,19 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
 import com.glamvibe.glamvibeclient.R
-import com.glamvibe.glamvibeclient.databinding.CardPromotionServiceBinding
+import com.glamvibe.glamvibeclient.databinding.CardRecommendationBinding
 import com.glamvibe.glamvibeclient.domain.model.Service
-import com.glamvibe.glamvibeclient.presentation.adapter.services.ServicePayload
 import com.glamvibe.glamvibeclient.utils.dpToPx
 
-class PromotionServicesViewHolder(private val binding: CardPromotionServiceBinding) :
+class RecommendationsViewHolder(private val binding: CardRecommendationBinding) :
     RecyclerView.ViewHolder(binding.root) {
     private val radius =
         this.itemView.context.resources.getDimensionPixelSize(R.dimen.corner_radius)
 
-    fun bind(payload: ServicePayload) {
+    fun bind(payload: RecommendationsPayload) {
         if (payload.favourite != null) {
             updateFavourite(payload.favourite)
         }
@@ -48,12 +45,12 @@ class PromotionServicesViewHolder(private val binding: CardPromotionServiceBindi
             binding.promotion.isVisible = false
         }
 
-        updateFavourite(service.isFavourite)
-
         binding.duration.text = service.duration.toString()
 
-        val widthPx = dpToPx(150, binding.root.context)
-        val heightPx = dpToPx(150, binding.root.context)
+        updateFavourite(service.isFavourite)
+
+        val widthPx = dpToPx(250, binding.root.context)
+        val heightPx = dpToPx(250, binding.root.context)
 
         if (service.imageUrl.isEmpty()) {
             Glide.with(binding.root)
@@ -63,11 +60,7 @@ class PromotionServicesViewHolder(private val binding: CardPromotionServiceBindi
         } else {
             Glide.with(binding.root)
                 .load(service.imageUrl)
-                .apply(
-                    RequestOptions()
-                        .override(widthPx, heightPx)
-                        .diskCacheStrategy(DiskCacheStrategy.ALL)
-                )
+                .override(widthPx, heightPx)
                 .error(R.drawable.empty_image)
                 .transform(
                     MultiTransformation(

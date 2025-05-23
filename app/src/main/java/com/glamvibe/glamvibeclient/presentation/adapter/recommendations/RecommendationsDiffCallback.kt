@@ -1,10 +1,9 @@
-package com.glamvibe.glamvibeclient.presentation.adapter.promotionServices
+package com.glamvibe.glamvibeclient.presentation.adapter.recommendations
 
 import androidx.recyclerview.widget.DiffUtil
 import com.glamvibe.glamvibeclient.domain.model.Service
-import com.glamvibe.glamvibeclient.presentation.adapter.services.ServicePayload
 
-class PromotionServicesDiffCallback : DiffUtil.ItemCallback<Service>() {
+class RecommendationsDiffCallback : DiffUtil.ItemCallback<Service>() {
     override fun areItemsTheSame(oldItem: Service, newItem: Service): Boolean =
         oldItem.id == newItem.id
 
@@ -12,7 +11,7 @@ class PromotionServicesDiffCallback : DiffUtil.ItemCallback<Service>() {
         oldItem == newItem
 
     override fun getChangePayload(oldItem: Service, newItem: Service): Any? =
-        ServicePayload(
+        RecommendationsPayload(
             favourite = newItem.isFavourite.takeIf {
                 it != oldItem.isFavourite
             }

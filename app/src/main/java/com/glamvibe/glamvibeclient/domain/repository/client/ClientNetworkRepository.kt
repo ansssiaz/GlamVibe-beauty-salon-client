@@ -4,6 +4,7 @@ import com.glamvibe.glamvibeclient.data.model.response.ClientResponse
 import com.glamvibe.glamvibeclient.data.model.response.TokenPair
 import com.glamvibe.glamvibeclient.data.model.request.NewClient
 import com.glamvibe.glamvibeclient.data.model.request.UpdatedClient
+import com.glamvibe.glamvibeclient.domain.model.Service
 
 interface ClientNetworkRepository {
     suspend fun register(client: NewClient): ClientResponse
@@ -12,4 +13,5 @@ interface ClientNetworkRepository {
     suspend fun logOut(id: Int)
     suspend fun getProfileInformation(refreshToken: String): ClientResponse
     suspend fun updateProfileInformation(id: Int, newClient: UpdatedClient): ClientResponse
+    suspend fun getRecommendations(id: Int): List<Service>
 }
